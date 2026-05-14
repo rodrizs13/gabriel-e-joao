@@ -55,28 +55,28 @@ button {
 
 <script>
 
-// RESPOSTAS PADRÃO
+
 let respostas = [
     { texto: "Faça uma pergunta melhor.", img: "" },
     { texto: "Não entendi, tente novamente.", img: "" },
     { texto: "Pergunta interessante...", img: "" }
 ];
 
-// GABRIEL (cada frase com imagem)
+
 let gabriel = [
     { texto: "Gabriel, sua ex nao ira voltar...", img: "rafa.png" },
     { texto: "Gabriel, Vai ser o advogado mais broxa de todas", img: "fracasso.png" },
     { texto: "Boa Gabriel! Seu vo nao te respeita pra vc andar com o carro.", img: "gabriel.png" }
 ];
 
-// JOAO (cada frase com imagem)
+
 let joao = [
     { texto: "João, Sua irma é gostosa", img: "irma.png" },
     { texto: "João, Quando era criança parecia uma baleia", img: "joao.png" },
     { texto: "Boa João! Faz academia e continua gordo.", img: "joao.png" }
 ];
 
-// FUNÇÃO IA
+
 function responder() {
     let input = document.getElementById("pergunta");
     let pergunta = input.value.toLowerCase();
@@ -99,10 +99,10 @@ function responder() {
         respostaFinal = respostas[Math.floor(Math.random() * respostas.length)];
     }
 
-    // TEXTO
+  
     document.getElementById("resposta").innerText = "IA: " + respostaFinal.texto;
 
-    // IMAGEM
+
     if(respostaFinal.img !== "") {
         img.src = respostaFinal.img;
         img.style.display = "block";
