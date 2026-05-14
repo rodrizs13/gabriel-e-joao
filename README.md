@@ -1,1 +1,2 @@
 # gabriel-e-joao
+FIZ NA ZUEIRA PRA ZUAR E QUERO ME DIVERTIR
