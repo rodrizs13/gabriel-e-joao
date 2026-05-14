@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>gabriel e joao</title>
+
+<style>
+body {
+    background: #000;
+    color: white;
+    font-family: Arial;
+    text-align: center;
+    padding: 20px;
+}
+
+input, button {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 8px;
+    border: none;
+}
+
+button {
+    background: #00ff88;
+    cursor: pointer;
+}
+
+#resposta {
+    margin-top: 15px;
+    font-size: 18px;
+}
+
+#imagemIA {
+    display: none;
+    margin: 20px auto; 
+    width: 500px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px #00ff88;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>GABRIEL E JOAO</h1>
+
+<h2>Assistente IA</h2>
+
+<input type="text" id="pergunta" placeholder="Digite sua pergunta">
+<button onclick="responder()">Enviar</button>
+
+<p id="resposta"></p>
+<img id="imagemIA">
+
+<script>
+
+// RESPOSTAS PADRÃO
+let respostas = [
+    { texto: "Faça uma pergunta melhor.", img: "" },
+    { texto: "Não entendi, tente novamente.", img: "" },
+    { texto: "Pergunta interessante...", img: "" }
+];
+
+// GABRIEL (cada frase com imagem)
+let gabriel = [
+    { texto: "Gabriel, sua ex nao ira voltar...", img: "rafa.png" },
+    { texto: "Gabriel, Vai ser o advogado mais broxa de todas", img: "fracasso.png" },
+    { texto: "Boa Gabriel! Seu vo nao te respeita pra vc andar com o carro.", img: "gabriel.png" }
+];
+
+// JOAO (cada frase com imagem)
+let joao = [
+    { texto: "João, Sua irma é gostosa", img: "irma.png" },
+    { texto: "João, Quando era criança parecia uma baleia", img: "joao.png" },
+    { texto: "Boa João! Faz academia e continua gordo.", img: "joao.png" }
+];
+
+// FUNÇÃO IA
+function responder() {
+    let input = document.getElementById("pergunta");
+    let pergunta = input.value.toLowerCase();
+    let img = document.getElementById("imagemIA");
+
+    if(pergunta === "") {
+        alert("Digite algo!");
+        return;
+    }
+
+    let respostaFinal;
+
+    if(pergunta.includes("gabriel")) {
+        respostaFinal = gabriel[Math.floor(Math.random() * gabriel.length)];
+    } 
+    else if(pergunta.includes("joao")) {
+        respostaFinal = joao[Math.floor(Math.random() * joao.length)];
+    } 
+    else {
+        respostaFinal = respostas[Math.floor(Math.random() * respostas.length)];
+    }
+
+    // TEXTO
+    document.getElementById("resposta").innerText = "IA: " + respostaFinal.texto;
+
+    // IMAGEM
+    if(respostaFinal.img !== "") {
+        img.src = respostaFinal.img;
+        img.style.display = "block";
+    } else {
+        img.style.display = "none";
+    }
+
+    input.value = "";
+}
+
+</script>
+
+</body>
+<source> <img src="lucas.png" width="300px"> <p>O CARA Q FEZ</p> <source>
+</html>
